@@ -90,8 +90,8 @@ function generateEmailHtml(url: string, score: number, vulnerabilities: any[]): 
               <p style="margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #93c5fd;">Scanned URL</p>
               <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0 0 12px;">
                 <tr>
-                  <td style="background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; padding: 10px 16px;">
-                    <p style="margin: 0; font-size: 14px; font-weight: 700; color: #ffffff; word-break: break-all;">&#128279; ${url}</p>
+                  <td style="background: #ffffff; border-radius: 8px; padding: 12px 18px;">
+                    <p style="margin: 0; font-size: 15px; font-weight: 700; color: #1e40af !important; word-break: break-all; text-decoration: none;">&#128279; <span style="color: #1e40af;">${url}</span></p>
                   </td>
                 </tr>
               </table>
