@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreatLens Security Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        .summary-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .score-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            margin-right: 20px;
+        }
+        .score-grade {
+            font-size: 48px;
+            font-weight: 900;
+        }
+        .vulnerability-counts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .count-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .critical { background-color: #fef2f2; color: #dc2626; }
+        .high { background-color: #fff7ed; color: #ea580c; }
+        .medium { background-color: #fffbeb; color: #d97706; }
+        .low { background-color: #f0fdf4; color: #65a30d; }
+        .vulnerabilities {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .vulnerability-item {
+            border-left: 4px solid #e5e7eb;
+            padding: 15px;
+            margin: 15px 0;
+            background: #f9fafb;
+            border-radius: 0 8px 8px 0;
+        }
+        .vulnerability-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .severity-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        .vulnerability-type {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .vulnerability-description {
+            color: #6b7280;
+            margin: 5px 0;
+        }
+        .vulnerability-location {
+            font-family: 'Courier New', monospace;
+            background: #f3f4f6;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #374151;
+            word-break: break-all;
+        }
+        .certificate-info {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+        .success-message {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛡️ ThreatLens Security Report</h1>
+        <p>Scheduled Scan Results for https://secure-website.com</p>
+        <p>Scan: Daily Security Monitoring • 20/9/2025, 9:58:40 am</p>
+    </div>
+
+    <div class="summary-card">
+        <h2 style="margin-top: 0; color: #1f2937;">Security Overview</h2>
+        <div class="score-display">
+            <div class="score-circle" style="background: #65a30d">
+                <div class="score-grade">92</div>
+            </div>
+            <div>
+                <div style="font-size: 24px; font-weight: bold; color: #1f2937;">Grade: A</div>
+                <div style="color: #6b7280; margin-top: 5px;">Security Score</div>
+            </div>
+        </div>
+        
+        <div class="vulnerability-counts">
+            <div class="count-item critical">
+                <div style="font-size: 24px; font-weight: bold;">0</div>
+                <div>Critical</div>
+            </div>
+            <div class="count-item high">
+                <div style="font-size: 24px; font-weight: bold;">0</div>
+                <div>High</div>
+            </div>
+            <div class="count-item medium">
+                <div style="font-size: 24px; font-weight: bold;">0</div>
+                <div>Medium</div>
+            </div>
+            <div class="count-item low">
+                <div style="font-size: 24px; font-weight: bold;">2</div>
+                <div>Low</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="vulnerabilities">
+        <h2 style="margin-top: 0; color: #1f2937;">Vulnerabilities Found (2)</h2>
+        
+            <div class="vulnerability-item" style="border-left-color: #65a30d;">
+                <div class="vulnerability-header">
+                    <span class="severity-badge" style="background-color: #65a30d; color: white;">
+                        🟢 LOW
+                    </span>
+                    <span class="vulnerability-type">Missing Security Headers</span>
+                </div>
+                <div class="vulnerability-description">Missing X-Content-Type-Options header</div>
+                <div class="vulnerability-location">https://secure-website.com</div>
+            </div>
+        
+            <div class="vulnerability-item" style="border-left-color: #65a30d;">
+                <div class="vulnerability-header">
+                    <span class="severity-badge" style="background-color: #65a30d; color: white;">
+                        🟢 LOW
+                    </span>
+                    <span class="vulnerability-type">Information Disclosure</span>
+                </div>
+                <div class="vulnerability-description">Server version information exposed in response headers</div>
+                <div class="vulnerability-location">https://secure-website.com</div>
+            </div>
+        
+    </div>
+    
+
+    
+    <div class="certificate-info">
+        <h2 style="margin-top: 0; color: #1f2937;">SSL Certificate Status</h2>
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+            <span style="font-size: 24px; margin-right: 10px;">🔒</span>
+            <div>
+                <div style="font-weight: 600; color: #1f2937;">Valid Certificate</div>
+                <div style="color: #6b7280;">Issued by: DigiCert</div>
+            </div>
+        </div>
+        <div style="color: #6b7280; font-size: 14px;">
+            <div>Valid from: 1/1/2024</div>
+            <div>Valid until: 1/1/2026</div>
+            <div>Days until expiry: 365</div>
+        </div>
+    </div>
+    
+
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="https://threatlens.app" class="btn">View Full Report</a>
+        <a href="https://threatlens.app/scheduled-scans" class="btn">Manage Schedules</a>
+    </div>
+
+    <div class="footer">
+        <p>This is an automated security report from ThreatLens.</p>
+        <p>For questions or support, contact us at support@threatlens.app</p>
+        <p>© 2024 ThreatLens. All rights reserved.</p>
+    </div>
+</body>
+</html>
