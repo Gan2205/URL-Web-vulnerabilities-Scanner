@@ -86,9 +86,16 @@ function generateEmailHtml(url: string, score: number, vulnerabilities: any[]): 
           <tr>
             <td style="background: linear-gradient(135deg, #1e40af 0%, #4f46e5 100%); border-radius: 16px 16px 0 0; padding: 40px 32px; text-align: center;">
               <p style="margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #bfdbfe;">Security Analysis</p>
-              <h1 style="margin: 0 0 12px; font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">ThreatLens Report</h1>
-              <p style="margin: 0; font-size: 13px; color: #93c5fd; word-break: break-all;">${url}</p>
-              <p style="margin: 6px 0 0; font-size: 12px; color: #6ea8fe;">${date}</p>
+              <h1 style="margin: 0 0 16px; font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">ThreatLens Report</h1>
+              <p style="margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #93c5fd;">Scanned URL</p>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0 0 12px;">
+                <tr>
+                  <td style="background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; padding: 10px 16px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: 700; color: #ffffff; word-break: break-all;">&#128279; ${url}</p>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin: 0; font-size: 12px; color: #bfdbfe;">&#128197; ${date}</p>
             </td>
           </tr>
 
